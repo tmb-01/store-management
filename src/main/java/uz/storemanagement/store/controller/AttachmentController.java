@@ -11,7 +11,8 @@ import uz.storemanagement.store.service.AttachmentService;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/v1//attachment")
+@RequestMapping("api/v1/attachment")
+@CrossOrigin
 public class AttachmentController {
 
     @Autowired
