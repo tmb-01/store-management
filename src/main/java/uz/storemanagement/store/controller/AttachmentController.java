@@ -24,8 +24,14 @@ public class AttachmentController {
     }
 
     @PostMapping
-    public String add(@RequestBody MultipartHttpServletRequest multipartHttpServletRequest) {
-        return attachmentService.addAttachment(multipartHttpServletRequest);
+    public String add(
+//            @RequestBody MultipartHttpServletRequest multipartHttpServletRequest
+            @RequestParam("image") MultipartFile file
+    ) {
+        return attachmentService.addAttachment(
+                file
+//                multipartHttpServletRequest
+        );
     }
 
 }

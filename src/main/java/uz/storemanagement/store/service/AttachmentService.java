@@ -28,9 +28,12 @@ public class AttachmentService {
     }
 
     @SneakyThrows
-    public String addAttachment(MultipartHttpServletRequest multipartHttpServletRequest) {
-        MultipartFile image = multipartHttpServletRequest.getFile("image");
-
+    public String addAttachment(
+//            MultipartHttpServletRequest multipartHttpServletRequest
+            MultipartFile image
+    ) {
+//        MultipartFile image = multipartHttpServletRequest.getFile("image");
+        System.out.println(image);
         if (image != null) {
             byte[] imageBytes = image.getBytes();
             Attachment attachment = new Attachment();
