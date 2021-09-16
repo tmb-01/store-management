@@ -19,7 +19,7 @@ public class SoldProduct {
     @GeneratedValue
     private UUID id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Product product;
 
     private Integer amount;

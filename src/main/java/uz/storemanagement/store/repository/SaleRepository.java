@@ -1,4 +1,9 @@
 package uz.storemanagement.store.repository;
 
-public interface SaleRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import uz.storemanagement.store.entity.Sale;
+
+import java.util.UUID;
+
+public interface SaleRepository extends JpaRepository<Sale, UUID> {
 }
