@@ -1,33 +1,28 @@
 package uz.storemanagement.store.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-public class Product {
+public class Sale {
     @Id
     @GeneratedValue
-    private Long id;
+    private UUID id;
 
-    private String productName;
 
-    private Integer amount;
-
-    private String imageId;
-
-    private String description;
-
-    private Long price;
+    @OneToMany(mappedBy = "sale",cascade = CascadeType.ALL)
+    private List<SoldProduct> productList;
 
     @CreationTimestamp
     private Timestamp createdAt;
