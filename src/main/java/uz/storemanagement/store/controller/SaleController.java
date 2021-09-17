@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/sale")
+@CrossOrigin
 public class SaleController {
 
     @Autowired
@@ -31,6 +32,4 @@ public class SaleController {
     public List<Sale> getHistory(){
         return saleService.getHistory();
     }
-
-
 }
