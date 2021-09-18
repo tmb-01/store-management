@@ -31,6 +31,8 @@ public class Product {
 
     private String description;
 
+    private String category;
+
     private Long price;
 
     @CreationTimestamp
